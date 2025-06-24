@@ -6,7 +6,7 @@ Carga y manejo de recursos del juego (imágenes, sonidos, fuentes)
 """
 import pygame
 from pygame import mixer
-from consts import ANCHO_PANTALLA, ALTO_PANTALLA, CANTIDAD_ENEMIGOS, ARCHIVOS, VOLUMEN_MUSICA
+from configuracion.consts import ANCHO_PANTALLA, ALTO_PANTALLA, CANTIDAD_ENEMIGOS, ARCHIVOS, VOLUMEN_MUSICA
 import os
 
 def cargar_recursos():

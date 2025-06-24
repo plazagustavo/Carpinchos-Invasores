@@ -1,8 +1,8 @@
 import pygame
-import input_nombre_module  # Importación del módulo funcional
-from consts import ANCHO_PANTALLA, ALTO_PANTALLA, CANTIDAD_ENEMIGOS
-import game_state_module
-import puntajes_module
+import entradas.input_nombre_module as input_nombre_module  # Importación del módulo funcional
+from configuracion.consts import ANCHO_PANTALLA, ALTO_PANTALLA, CANTIDAD_ENEMIGOS
+import juego.game_state_module as game_state_module
+import puntajes.puntajes_module as puntajes_module
 
 
 def mostrar_puntaje(pantalla, recursos, x, y):

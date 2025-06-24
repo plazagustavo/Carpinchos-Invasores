@@ -3,12 +3,12 @@
 Manejo de eventos de teclado y entrada del usuario
 """
 import pygame
-from consts import VELOCIDAD_JUGADOR, ESTADO_INTRO, ESTADO_MENU, ESTADO_JUGANDO, ESTADO_GAME_OVER, ESTADO_INGRESO_NOMBRE, ESTADO_RANKING
-import game_state_module
-from game_logic_module import crear_bala
-import input_nombre_module
-import puntajes_module
-import intro_module
+from configuracion.consts import VELOCIDAD_JUGADOR, ESTADO_INTRO, ESTADO_MENU, ESTADO_JUGANDO, ESTADO_GAME_OVER, ESTADO_INGRESO_NOMBRE, ESTADO_RANKING
+import juego.game_state_module as game_state_module
+from juego.game_logic_module import crear_bala
+import entradas.input_nombre_module as input_nombre_module
+import puntajes.puntajes_module as puntajes_module
+import juego.intro_module as intro_module
 
 def manejar_eventos_intro(evento, estado_intro):
     """Maneja los eventos del teclado en la introducción"""

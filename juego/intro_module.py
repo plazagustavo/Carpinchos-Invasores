@@ -1,9 +1,9 @@
 import pygame
-from consts import (
+from configuracion.consts import (
     TIEMPO_INTRO, VELOCIDAD_TEXTO_INTRO, HISTORIA_INTRO, 
     ANCHO_PANTALLA, ALTO_PANTALLA, ESTADO_MENU, ARCHIVOS
 )
-import game_state_module
+import juego.game_state_module as game_state_module
 
 def cargar_imagen_intro():
     """Carga solo la imagen de intro y retorna un diccionario simple"""

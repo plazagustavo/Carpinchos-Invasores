@@ -1,12 +1,12 @@
 import pygame
-from consts import ANCHO_PANTALLA, ALTO_PANTALLA, ESTADO_INTRO, ESTADO_MENU, ESTADO_JUGANDO, ESTADO_GAME_OVER, ESTADO_INGRESO_NOMBRE, ESTADO_RANKING
-import game_state_module
-from resources_module import cargar_recursos, configurar_audio
-from renderer_module import mostrar_menu, mostrar_game_over, renderizar_juego, mostrar_ingreso_nombre, mostrar_ranking
-from game_logic_module import actualizar_juego
-from input_handler_module import procesar_eventos
-import input_nombre_module
-import intro_module
+from configuracion.consts import ANCHO_PANTALLA, ALTO_PANTALLA, ESTADO_INTRO, ESTADO_MENU, ESTADO_JUGANDO, ESTADO_GAME_OVER, ESTADO_INGRESO_NOMBRE, ESTADO_RANKING
+import juego.game_state_module as game_state_module
+from renderizado.resources_module import cargar_recursos, configurar_audio
+from renderizado.renderer_module import mostrar_menu, mostrar_game_over, renderizar_juego, mostrar_ingreso_nombre, mostrar_ranking
+from juego.game_logic_module import actualizar_juego
+from entradas.input_handler_module import procesar_eventos
+import entradas.input_nombre_module as input_nombre_module
+import juego.intro_module as intro_module
 
 def inicializar_pygame():
     """Inicializa pygame y configura la ventana principal"""

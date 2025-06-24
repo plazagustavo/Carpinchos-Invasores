@@ -47,17 +47,17 @@ HISTORIA_INTRO = [
 # Rutas de archivos
 ARCHIVOS = {
     
-    'img_intro': "assets/images/fondos/capys_agresivos.jpeg",
-    'icono': "assets/images/models/capybara.png",
-    'fondo': "assets/images/fondos/nordelta_recorte.jpg",
-    'fondo_menu': "assets/images/fondos/f15.jpeg",
-    'img_game_over': "assets/images/fondos/capy_galactico.jpeg",
-    'img_jugador': "assets/images/models/avion.png",
-    'img_bala': "assets/images/models/bala.png",
-    'img_enemigo': "assets/images/models/carpincho.png",
-    'sonido_bala': 'assets/sounds/disparo.mp3',
-    'sonido_colision': 'assets/sounds/Golpe.mp3',
-    'sonido_vida_perdida': 'assets/sounds/vida_perdida.mp3',
-    'musica': 'assets/sounds/space_zero_ost.mp3',
-    'fuente': 'assets/fonts/gotic.ttf'
+    'img_intro': "utilidades/images/fondos/capys_agresivos.jpeg",
+    'icono': "utilidades/images/models/capybara.png",
+    'fondo': "utilidades/images/fondos/nordelta_recorte.jpg",
+    'fondo_menu': "utilidades/images/fondos/f15.jpeg",
+    'img_game_over': "utilidades/images/fondos/capy_galactico.jpeg",
+    'img_jugador': "utilidades/images/models/avion.png",
+    'img_bala': "utilidades/images/models/bala.png",
+    'img_enemigo': "utilidades/images/models/carpincho.png",
+    'sonido_bala': 'utilidades/sounds/disparo.mp3',
+    'sonido_colision': 'utilidades/sounds/Golpe.mp3',
+    'sonido_vida_perdida': 'utilidades/sounds/vida_perdida.mp3',
+    'musica': 'utilidades/sounds/space_zero_ost.mp3',
+    'fuente': 'utilidades/fonts/gotic.ttf'
 }

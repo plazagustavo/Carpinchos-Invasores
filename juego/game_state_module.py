@@ -3,7 +3,7 @@
 Variables globales del estado del juego
 """
 import random
-from consts import CANTIDAD_ENEMIGOS, VELOCIDAD_ENEMIGO, DESCENSO_ENEMIGO, ESTADO_INTRO, VIDAS_INICIALES, ANCHO_PANTALLA, ALTO_PANTALLA
+from configuracion.consts import CANTIDAD_ENEMIGOS, VELOCIDAD_ENEMIGO, DESCENSO_ENEMIGO, ESTADO_INTRO, VIDAS_INICIALES, ANCHO_PANTALLA, ALTO_PANTALLA
 
 # Variables globales del estado del juego
 puntaje = 0

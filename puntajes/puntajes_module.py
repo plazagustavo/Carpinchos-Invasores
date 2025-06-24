@@ -95,9 +95,7 @@ def limpiar_nombre(nombre):
     # Limitar longitud
     if len(nombre) > 15:
         nombre = nombre[:15]
-    
-    # Eliminar caracteres problemáticos (comas y saltos de línea)
-    nombre = nombre.replace(',', '').replace('\n', '').replace('\r', '')
+
     
     # Convertir a mayúsculas para consistencia
     return nombre.upper()

@@ -4,14 +4,14 @@ Lógica principal del juego: movimiento, colisiones, balas
 """
 import math
 import random
-from consts import (
+from configuracion.consts import (
     VELOCIDAD_BALA, LIMITE_JUGADOR_X, LIMITE_JUGADOR_Y, 
     VELOCIDAD_ENEMIGO, DISTANCIA_COLISION_BALA, 
     DISTANCIA_COLISION_JUGADOR, ESTADO_GAME_OVER, CANTIDAD_ENEMIGOS,
     ESTADO_INGRESO_NOMBRE
 )
-import game_state_module
-import puntajes_module
+import juego.game_state_module as game_state_module
+import puntajes.puntajes_module as puntajes_module
 
 def crear_bala(x, y):
     """Crea una nueva bala en la posición especificada"""
