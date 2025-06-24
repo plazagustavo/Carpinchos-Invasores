@@ -1,5 +1,5 @@
 import pygame
-from config_module import ANCHO_PANTALLA, ALTO_PANTALLA, ESTADO_INTRO, ESTADO_MENU, ESTADO_JUGANDO, ESTADO_GAME_OVER, ESTADO_INGRESO_NOMBRE, ESTADO_RANKING
+from consts import ANCHO_PANTALLA, ALTO_PANTALLA, ESTADO_INTRO, ESTADO_MENU, ESTADO_JUGANDO, ESTADO_GAME_OVER, ESTADO_INGRESO_NOMBRE, ESTADO_RANKING
 import game_state_module
 from resources_module import cargar_recursos, configurar_audio
 from renderer_module import mostrar_menu, mostrar_game_over, renderizar_juego, mostrar_ingreso_nombre, mostrar_ranking

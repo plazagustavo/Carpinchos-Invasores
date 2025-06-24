@@ -1,5 +1,5 @@
 import pygame
-from config_module import (
+from consts import (
     TIEMPO_INTRO, VELOCIDAD_TEXTO_INTRO, HISTORIA_INTRO, 
     ANCHO_PANTALLA, ALTO_PANTALLA, ESTADO_MENU, ARCHIVOS
 )

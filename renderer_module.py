@@ -1,6 +1,6 @@
 import pygame
 import input_nombre_module  # Importación del módulo funcional
-from config_module import ANCHO_PANTALLA, ALTO_PANTALLA, CANTIDAD_ENEMIGOS
+from consts import ANCHO_PANTALLA, ALTO_PANTALLA, CANTIDAD_ENEMIGOS
 import game_state_module
 import puntajes_module
 

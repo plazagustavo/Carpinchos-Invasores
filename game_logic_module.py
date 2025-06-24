@@ -4,7 +4,7 @@ Lógica principal del juego: movimiento, colisiones, balas
 """
 import math
 import random
-from config_module import (
+from consts import (
     VELOCIDAD_BALA, LIMITE_JUGADOR_X, LIMITE_JUGADOR_Y, 
     VELOCIDAD_ENEMIGO, DISTANCIA_COLISION_BALA, 
     DISTANCIA_COLISION_JUGADOR, ESTADO_GAME_OVER, CANTIDAD_ENEMIGOS,

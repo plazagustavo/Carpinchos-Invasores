@@ -3,7 +3,7 @@
 Manejo de eventos de teclado y entrada del usuario
 """
 import pygame
-from config_module import VELOCIDAD_JUGADOR, ESTADO_INTRO, ESTADO_MENU, ESTADO_JUGANDO, ESTADO_GAME_OVER, ESTADO_INGRESO_NOMBRE, ESTADO_RANKING
+from consts import VELOCIDAD_JUGADOR, ESTADO_INTRO, ESTADO_MENU, ESTADO_JUGANDO, ESTADO_GAME_OVER, ESTADO_INGRESO_NOMBRE, ESTADO_RANKING
 import game_state_module
 from game_logic_module import crear_bala
 import input_nombre_module
