@@ -23,6 +23,10 @@ GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 BROWN = (139, 69, 19)
 YELLOW = (255, 255, 0)
+CHOCOLATE_BROWN = (90, 45, 30) 
+VERDE_MENTA = (144, 238, 144)
+AZUL_CIELO = (173, 216, 230)
+ROSA_PASTEL = (255, 182, 193)
 
 ARCHIVOS = {
     'img_intro': "assets/images/backgrounds/capys_agresivos.jpeg",
@@ -39,5 +43,8 @@ ARCHIVOS = {
     'sonido_vida_perdida': 'assets/sounds/vida_perdida.mp3',
     'musica': 'assets/sounds/space_zero_ost.mp3',
     'menu_musica': 'assets/sounds/menu_musica.mp3',
-    'fuente': 'assets/fonts/gotic.ttf'
+    'fuente': 'assets/fonts/gotic.ttf',
+    'boton_jugar': 'assets/images/botones/boton_jugar.png', 
+    'boton_ranking': 'assets/images/botones/boton_ranking.png',
+    'boton_salir': 'assets/images/botones/boton_salir.png',
 }

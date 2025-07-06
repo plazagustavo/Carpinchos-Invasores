@@ -3,10 +3,10 @@ import sys
 from consts.constantes import *
 from game.menu import crear_elementos_menu, dibujar_menu, manejar_click_menu
 from game.inicializacion import inicializar_pygame
-from game.recursos import cargar_recursos
+from game.recursos import cargar_sonidos, cargar_imagenes, cargar_fuentes
 from game.musica import iniciar_musica, iniciar_musica_menu
 from game.pantallas import mostrar_ranking, dibujar_game_over_simple, dibujar_juego
-from estados import *
+from game.estados import *
 from puntajes_module import *
 from playerdata.enemigos import actualizar_capybaras
 from playerdata.nave import movimiento_nave, cargar_recursos_golpe
@@ -18,7 +18,31 @@ def ejecutar_juego():
     """Función principal del juego"""
     # Inicializar
     ventana, clock = inicializar_pygame()
-    sonido_disparo, sonido_colision, sonido_game_over, nave_img, capy_img, fondo_img, menu_fondo_img, intro_img, corazon_img, fuente, fuente_pequena, fuente_grande, fuente_menu, fuente_controles = cargar_recursos()
+    
+    #Cargar recursos
+    sonidos = cargar_sonidos()
+    imagenes = cargar_imagenes()
+    fuentes = cargar_fuentes()
+
+    sonido_disparo = sonidos["disparo"]
+    sonido_colision = sonidos["colision"]
+    sonido_game_over = sonidos["game_over"]
+
+    nave_img = imagenes["nave"]
+    capy_img = imagenes["capybara"]
+    fondo_img = imagenes["fondo"]
+    menu_fondo_img = imagenes["menu_fondo"]
+    intro_img = imagenes["intro"]
+    corazon_img = imagenes["corazon"]
+
+    fuente = fuentes["normal"]
+    fuente_pequena = fuentes["pequena"]
+    fuente_grande = fuentes["grande"]
+    fuente_menu = fuentes["menu"]
+    fuente_controles = fuentes["controles"]
+
+
+
     ultimo_golpe, es_invulnerable = cargar_recursos_golpe()
     # Crear elementos del menú
     boton_jugar, boton_ranking, boton_salir, texto_boton_jugar, texto_boton_ranking, texto_boton_salir = crear_elementos_menu()
@@ -65,7 +89,7 @@ def ejecutar_juego():
                 if debe_cambiar_a_menu(estado_intro):
                     estado_juego = "jugando"
                     estado = crear_estado_inicial()
-                    # No cambiar música aquí, ya está sonando la del juego
+
             
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if estado_juego == "menu":

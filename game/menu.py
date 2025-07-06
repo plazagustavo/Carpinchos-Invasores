@@ -2,49 +2,64 @@ import pygame
 from consts.constantes import *
 
 def crear_elementos_menu():
-    """Crea todos los elementos del menú"""
-    fuente_inicio = pygame.font.Font(None, 30)
-    
-    # Botones horizontales en la parte inferior
+    """Crea todos los elementos del menú con imágenes para los tres botones en disposición vertical"""
+
+    # Tamaño uniforme para todos los botones
     boton_ancho = 150
     boton_alto = 50
-    espacio_entre_botones = 20
-    y_botones = HEIGHT - 100
-    
-    # Calcular posiciones para centrar los 3 botones
-    total_ancho = (boton_ancho * 3) + (espacio_entre_botones * 2)
-    x_inicial = (WIDTH - total_ancho) // 2
-    
-    boton_jugar = pygame.Rect(x_inicial, y_botones, boton_ancho, boton_alto)
-    boton_ranking = pygame.Rect(x_inicial + boton_ancho + espacio_entre_botones, y_botones, boton_ancho, boton_alto)
-    boton_salir = pygame.Rect(x_inicial + (boton_ancho + espacio_entre_botones) * 2, y_botones, boton_ancho, boton_alto)
-    
-    texto_boton_jugar = fuente_inicio.render("Jugar", True, WHITE)
-    texto_boton_ranking = fuente_inicio.render("Ranking", True, WHITE)
-    texto_boton_salir = fuente_inicio.render("Salir", True, WHITE)
-    
-    return boton_jugar, boton_ranking, boton_salir, texto_boton_jugar, texto_boton_ranking, texto_boton_salir
+    espacio_entre_botones = 25
+    tamaño_boton = (boton_ancho, boton_alto)
 
-def dibujar_menu(ventana, boton_jugar, boton_ranking, boton_salir, texto_boton_jugar, texto_boton_ranking, texto_boton_salir, menu_fondo_img=None):
-    """Dibuja la pantalla del menú"""
+    # Cargar y escalar imágenes de botones
+    img_boton_jugar = pygame.image.load(ARCHIVOS['boton_jugar']).convert_alpha()
+    img_boton_jugar = pygame.transform.smoothscale(img_boton_jugar, tamaño_boton)
+
+    img_boton_ranking = pygame.image.load(ARCHIVOS['boton_ranking']).convert_alpha()
+    img_boton_ranking = pygame.transform.smoothscale(img_boton_ranking, tamaño_boton)
+
+    img_boton_salir = pygame.image.load(ARCHIVOS['boton_salir']).convert_alpha()
+    img_boton_salir = pygame.transform.smoothscale(img_boton_salir, tamaño_boton)
+
+    # Calcular posición vertical centrada
+    total_alto = (boton_alto * 3) + (espacio_entre_botones * 2)
+    y_inicial = (HEIGHT - total_alto) // 2
+    x_centro = (WIDTH - boton_ancho) // 2
+
+    # Crear rectángulos para detección de clics
+    boton_jugar = pygame.Rect(x_centro, y_inicial, boton_ancho, boton_alto)
+    boton_ranking = pygame.Rect(x_centro, y_inicial + boton_alto + espacio_entre_botones, boton_ancho, boton_alto)
+    boton_salir = pygame.Rect(x_centro, y_inicial + (boton_alto + espacio_entre_botones) * 2, boton_ancho, boton_alto)
+
+    return boton_jugar, boton_ranking, boton_salir, img_boton_jugar, img_boton_ranking, img_boton_salir
+
+def dibujar_menu(ventana, boton_jugar, boton_ranking, boton_salir,
+                 img_boton_jugar, img_boton_ranking, img_boton_salir,
+                 menu_fondo_img):
+    """Dibuja la pantalla del menú con botones verticales usando imágenes"""
+    
     if menu_fondo_img:
         ventana.blit(menu_fondo_img, (0, 0))
     else:
         ventana.fill(BLACK)
-    
-    # Botones horizontales
-    pygame.draw.rect(ventana, GREEN, boton_jugar)
-    pygame.draw.rect(ventana, BLUE, boton_ranking)
-    pygame.draw.rect(ventana, RED, boton_salir)
-    
-    # Texto de los botones centrado
-    rect_jugar = texto_boton_jugar.get_rect(center=boton_jugar.center)
-    rect_ranking = texto_boton_ranking.get_rect(center=boton_ranking.center)
-    rect_salir = texto_boton_salir.get_rect(center=boton_salir.center)
-    
-    ventana.blit(texto_boton_jugar, rect_jugar)
-    ventana.blit(texto_boton_ranking, rect_ranking)
-    ventana.blit(texto_boton_salir, rect_salir)
+
+    # Dibujar imágenes centradas en sus rectángulos
+    ventana.blit(img_boton_jugar, img_boton_jugar.get_rect(center=boton_jugar.center))
+    ventana.blit(img_boton_ranking, img_boton_ranking.get_rect(center=boton_ranking.center))
+    ventana.blit(img_boton_salir, img_boton_salir.get_rect(center=boton_salir.center))
+
+    mouse_pos = pygame.mouse.get_pos()
+
+    for boton, imagen in [(boton_jugar, img_boton_jugar),
+                        (boton_ranking, img_boton_ranking),
+                        (boton_salir, img_boton_salir)]:
+
+        if boton.collidepoint(mouse_pos):
+            imagen_hover = tintar_imagen(imagen, CHOCOLATE_BROWN) 
+            ventana.blit(imagen_hover, imagen_hover.get_rect(center=boton.center))
+        else:
+            ventana.blit(imagen, imagen.get_rect(center=boton.center))
+
+
 
 def manejar_click_menu(pos_mouse, boton_jugar, boton_ranking, boton_salir):
     """Maneja los clics en el menú"""
@@ -55,3 +70,11 @@ def manejar_click_menu(pos_mouse, boton_jugar, boton_ranking, boton_salir):
     elif boton_salir.collidepoint(pos_mouse):
         return "salir"
     return None
+
+def tintar_imagen(imagen, color):
+    """Devuelve una copia de la imagen con un tinte de color aplicado"""
+    imagen_tintada = imagen.copy()
+    tint_surface = pygame.Surface(imagen.get_size(), pygame.SRCALPHA)
+    tint_surface.fill(color)
+    imagen_tintada.blit(tint_surface, (0, 0), special_flags=pygame.BLEND_RGBA_MULT)
+    return imagen_tintada
