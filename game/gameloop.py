@@ -222,7 +222,7 @@ def ejecutar_juego():
                 dibujar_game_over_simple(ventana, fondo_img, estado, fuente, fuente_pequena)
             
             elif estado["estado_pantalla"] == "entrada_nombre":
-                dibujar_entrada_nombre(ventana, estado["nombre_jugador"], fuente_grande, fuente, fuente_pequena)
+                dibujar_entrada_nombre(ventana, estado["nombre_jugador"], puntos, fuente_grande, fuente, fuente_pequena)
             
             elif estado["estado_pantalla"] == "puntajes":
                 dibujar_puntajes(ventana, estado["puntajes_top"], fuente_grande, fuente, fuente_pequena)
