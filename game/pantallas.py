@@ -1,6 +1,6 @@
 import pygame
 from consts.constantes import *
-from puntajes_module import obtener_top_puntajes, es_top_puntaje
+from game.ranking_unificado import obtener_top_puntajes, es_top_puntaje
 from playerdata.balas import dibujar_balas
 from game.vidas import dibujar_vidas
 

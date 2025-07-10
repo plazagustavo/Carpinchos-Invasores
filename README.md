@@ -78,7 +78,7 @@ fly-cats-game/
 │   ├── menu.py                     # Funciones de menu
 │   ├── musica.py                   # Inicia la música del juego
 │   ├── pantallas.py                # Dibuja en pantalla los estados
-│   ├── ranking.py                  # Funciones del ranking
+│   ├── ranking_unificado.py        # Funciones del ranking y el puntaje
 │   ├── recursos.py                 # Carga los recursos del juego
 │   └── vidas.py                    # Dibuja las vidas
 ├── playerdata/                     # Datos de nave, enemigos y balas
@@ -88,7 +88,6 @@ fly-cats-game/
 │   └── nave.py                     # Datos de nave
 ├── intro.py                        # Funciones de la intro
 ├── principal.py                    # Se ejecuta el juego
-├── puntajes_module.py              # Funciones de puntajes
 ├── puntajes.txt                    # Texto de los puntajes
 └── README.md                       # README
 ```
