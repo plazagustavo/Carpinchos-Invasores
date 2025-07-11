@@ -6,6 +6,8 @@ def inicializar_pygame():
     pygame.init()
     pygame.mixer.init()
     pygame.display.set_caption('Carpinchos Invasores')
+    icono = pygame.image.load(ARCHIVOS["icono"])
+    pygame.display.set_icon(icono)
     
     ventana = pygame.display.set_mode((WIDTH, HEIGHT))
     clock = pygame.time.Clock()

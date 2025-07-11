@@ -7,7 +7,7 @@ from game.recursos import cargar_sonidos, cargar_imagenes, cargar_fuentes
 from game.musica import iniciar_musica, iniciar_musica_menu
 from game.pantallas import mostrar_ranking, dibujar_game_over_simple, dibujar_juego
 from game.estados import *
-from puntajes_module import *
+from game.ranking_unificado import *
 from playerdata.enemigos import actualizar_capybaras
 from playerdata.nave import movimiento_nave, cargar_recursos_golpe
 from playerdata.balas import crear_bala, actualizar_balas
@@ -60,9 +60,14 @@ def ejecutar_juego():
     }
     
     historia = [
-        "En el año 2087, los carpinchos han invadido la Tierra...",
-        "Solo tú puedes detenerlos con tu nave espacial.",
-        "¡Prepárate para la batalla final!"
+        "En el año 2087, los carpinchos deciden revelarse",
+        "para recuperar las tierras que alguna vez fueron suyas",
+        "y que por culpa de la urbanizacion de su habitat natural",
+        "les fueron arrebatadas, generando una ola de bandalismo",
+        "en todo Nordelta.",
+        "Tu tienes la unica nave 'anti carpincho' que existe",
+        "Una amenaza la cual nadie creia posible......hasta ahora",
+        "DEBES DETENER LA AMENAZA CARPINCHO !!!"
     ]
     
     # Estado del juego
@@ -223,7 +228,7 @@ def ejecutar_juego():
                 dibujar_game_over_simple(ventana, fondo_img, estado, fuente, fuente_pequena)
             
             elif estado["estado_pantalla"] == "entrada_nombre":
-                dibujar_entrada_nombre(ventana, estado["nombre_jugador"], fuente_grande, fuente, fuente_pequena)
+                dibujar_entrada_nombre(ventana, estado["nombre_jugador"], puntos, fuente_grande, fuente, fuente_pequena)
             
             elif estado["estado_pantalla"] == "puntajes":
                 dibujar_puntajes(ventana, estado["puntajes_top"], fuente_grande, fuente, fuente_pequena)

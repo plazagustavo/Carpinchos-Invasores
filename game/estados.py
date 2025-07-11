@@ -1,9 +1,9 @@
 import pygame
 from consts.constantes import *
-from puntajes_module import es_top_puntaje
+from game.ranking_unificado import es_top_puntaje
 from playerdata.enemigos import capybaras
 from playerdata.nave import crear_nave_inicial
-from game.ranking import cargar_ranking
+from game.ranking_unificado import cargar_ranking
 
 def crear_estado_inicial():
     """Crea el estado inicial del juego"""
