@@ -57,7 +57,7 @@
 
 ## Estructura del proyecto
 ```
-fly-cats-game/
+CARPINCHOS-INVASORES/
 ├── assets/                         # Recursos multimedia
 │   ├── fonts/                      # Fuentes del juego
 │   ├── images/                     # Imagenes del juego
