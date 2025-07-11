@@ -82,16 +82,9 @@ def ejecutar_juego():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 jugar = False
-            
-            # Manejar eventos de intro
-            if estado_juego == "intro":
-                estado_intro = manejar_evento_intro(estado_intro, event)
-                if debe_cambiar_a_menu(estado_intro):
-                    estado_juego = "jugando"
-                    estado = crear_estado_inicial()
 
             
-            if event.type == pygame.MOUSEBUTTONDOWN:
+            if event.type == pygame.MOUSEBUTTONDOWN:          # Manejar clic del mouse, en el menú
                 if estado_juego == "menu":
                     accion = manejar_click_menu(event.pos, boton_jugar, boton_ranking, boton_salir)
                     if accion == "jugar":
@@ -104,6 +97,14 @@ def ejecutar_juego():
                     elif accion == "salir":
                         jugar = False
             
+            # Manejar eventos de intro
+            if estado_juego == "intro":
+                estado_intro = manejar_evento_intro(estado_intro, event)
+                if debe_cambiar_a_menu(estado_intro):
+                    estado_juego = "jugando"
+                    estado = crear_estado_inicial()
+
+
             if event.type == pygame.KEYDOWN:
                 # Disparar
                 if event.key == pygame.K_SPACE and estado_juego == "jugando":
